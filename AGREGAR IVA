@@ -1,0 +1,64 @@
+
+E911: Agregar porcentaje de IVA, si se coloca 0, se convierte en 21%
+ 
+MAIN
+package e911;
+ 
+import java.util.Scanner;
+ 
+ 
+public class E911 {
+ 
+ 
+    public static void main(String[] args) {
+
+        calculaIva factura = new calculaIva();
+
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println("Ingrese importe sin IVA");
+
+        double importe1 = sc.nextDouble();
+
+
+        System.out.println("Ingrese porcentaje de IVA");
+
+        double piva = sc.nextDouble();        
+
+        double total = factura.calcularIva(importe1, piva);
+
+        System.out.println("Total: " + total);
+
+
+    }
+
+}
+
+CLASE LOGICA
+
+
+package e911;
+ 
+ 
+public class calculaIva {
+
+
+    public double calcularIva (double importe, double iva){
+
+        double resultado = 0;
+
+        if (iva == 0) {
+
+            iva = 21;
+
+        }
+
+        double impuesto = (importe * iva) / 100;
+
+        resultado = importe + impuesto;
+
+        return resultado;
+
+    }
+
+}
