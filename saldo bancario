@@ -1,0 +1,125 @@
+
+E702: SALDO BANCARIO MODIFICAR
+MAIN: 
+package e702;
+ 
+import java.util.Scanner;
+ 
+public class E702 {
+ 
+
+
+    public static void main(String[] args) {
+
+        cuenta_bancaria cb = new cuenta_bancaria();        
+
+        Scanner sc = new Scanner (System.in);
+
+        //INGRESAR SALDO
+
+        System.out.println("Ingrese saldo");
+
+        double s1 = sc.nextDouble();
+
+        cb.ingresar(s1);
+
+        System.out.println("Cuanto saldo desea retirar");
+
+        double s2 = sc.nextDouble();
+
+        cb.retirar(s2);
+
+        System.out.println("Cuenta: ");
+
+        System.out.println(cb.toString());
+
+    }
+ 
+CLASE LOGICA:
+ 
+package e702;
+ 
+public class cuenta_bancaria {
+
+    long numeroCuenta;
+
+    long dni;
+
+    double saldo;
+
+    double interes;
+
+
+    public void ingresar(double cantidad){
+
+        this.saldo = this.saldo + cantidad;
+
+    }
+
+
+    public void retirar(double cantidad){
+
+        this.saldo = this.saldo - cantidad; 
+
+    }
+ 
+    public long getNumeroCuenta() {
+
+        return numeroCuenta;
+
+    }
+ 
+    public void setNumeroCuenta(long numeroCuenta) {
+
+        this.numeroCuenta = numeroCuenta;
+
+    }
+ 
+    public long getDni() {
+
+        return dni;
+
+    }
+ 
+    public void setDni(long dni) {
+
+        this.dni = dni;
+
+    }
+ 
+    public double getSaldo() {
+
+        return saldo;
+
+    }
+ 
+    public void setSaldo(double saldo) {
+
+        this.saldo = saldo;
+
+    }
+ 
+    public double getInteres() {
+
+        return interes;
+
+    }
+ 
+    public void setInteres(double interes) {
+
+        this.interes = interes;
+
+    }
+ 
+    @Override
+
+    public String toString() {
+
+        return "cuenta_bancaria{" + "numeroCuenta = " + numeroCuenta + ", dni = " + dni + ", saldo = " + saldo + ", interes = " + interes + '}';
+
+    }
+
+
+
+}
+
