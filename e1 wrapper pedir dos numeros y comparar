@@ -1,0 +1,53 @@
+
+E1 Wrapper : Pedir dos numeros y compararlos mayor o menor
+
+
+package e1_wrapper;
+ 
+import java.util.Scanner;
+ 
+ 
+public class E1_wrapper {
+ 
+ 
+    public static void main(String[] args) {
+
+        //EJEMPLO 1 WRAPPER 
+
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println("Ingresa dos datos: ");    
+
+        // int n1 = sc.nextInt();    
+
+        Integer n2 = sc.nextInt();
+
+        Integer n3 = sc.nextInt();        
+
+        //if (n2==n3) (Usamos "Integer" (wrapper) ya no es mas primitivo, ahora es un objeto y se comparan con metodos:
+
+        if (n2.equals(n3)) {
+
+            System.out.println("Son iguales");           
+
+        } else {     
+
+            //Para saber cual es mayor, compara ambos objetos, si el resultado es mayor a 0 (positivo) el primero es mayor, y 
+
+            // si es menor a 0 (negativo) el segundo es mayor
+
+            if (n2.compareTo(n3) > 0) {   
+
+                System.out.println("El primero es mayor"); 
+
+            } else {
+
+            System.out.println("El segundo es mayor");                
+
+            }
+
+        }      
+
+    }
+
+}
