@@ -1,0 +1,87 @@
+
+E602: MODIFICAR UN NUMERO DE TELEFONO 10 DIGITOS
+EN EL MAIN:
+
+
+package e602;
+ 
+import java.util.Scanner;
+ 
+ 
+public class E602 {
+ 
+ 
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // E602. Pasar un numero de 10 cifras juntas a este formato: (xx)-x-xxxxxxx
+
+        System.out.println("Ingrese un numero de 10 digitos");
+
+        String numeroPedido = sc.nextLine();
+
+        //Usamos la clase numero_telefono
+
+        numero_telefono nt = new numero_telefono();
+
+
+        // Decimos que el String numero de la otra clase, sea igual al numero pedido anteriormente
+
+        nt.numero = numeroPedido;
+
+
+        // Resultado de un numero de 10 cifras juntas a (xx)-x-xxxxxxx
+
+        System.out.println("Salida: " + nt.formateo());
+
+
+    }
+
+}
+ 
+EN LA CLASE LOGICA:
+
+
+package e602;
+ 
+ 
+public class numero_telefono {
+
+    //Creamos String numero para luego ser utilizado en la conversion en el main
+
+    String numero = "";
+
+    public String formateo(){    
+
+        String salida = "";
+
+        StringBuilder sb = new StringBuilder();
+
+        // Agrega primer parentesis
+
+        sb.append("("); 
+
+        sb.append(numero.substring(0,2)); // Del numero ingresado toma el num en la posicion 0 y 1
+
+        // Agrega segundo parentesis y guion
+
+        sb.append(")-"); 
+
+        sb.append(numero.substring(2,3)); // Del numero ingresado toma el num en la posicion 2, agrega " ) - "
+
+        // Agrega numeros guion y numeros restantes
+
+        sb.append("-");
+
+        sb.append(numero.substring(3)); // A partir de la posicion 3 agrega lo que falta        
+
+        salida = sb.toString();
+
+        return salida;
+
+    }
+
+
+
+}
