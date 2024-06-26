@@ -1,0 +1,39 @@
+
+E502 STRING: 
+
+
+package e501;
+ 
+import java.util.Scanner;
+ 
+ 
+public class E501 {
+ 
+ 
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println("Ingresa el nombre");
+
+        String name = sc.nextLine();
+
+        String nameMinus = name.toLowerCase();
+
+        if(nameMinus.endsWith("a")){
+
+            System.out.println("Es nombre femenino");
+
+        } else if (nameMinus.endsWith("o")){
+
+            System.out.println("Es nombre masculino");
+
+        } else {
+
+            System.out.println("Indeterminado");
+
+        }
+
+    }
+
+}
