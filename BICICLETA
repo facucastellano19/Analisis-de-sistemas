@@ -1,0 +1,133 @@
+
+METODOS: EJERCICIO BICICLETA
+package demo_bicicleta;
+ 
+import java.util.Scanner;
+ 
+ 
+public class Demo_bicicleta {
+ 
+ 
+    public static void main(String[] args) {
+
+        bicicleta bici = new bicicleta ();
+
+        Scanner sc = new Scanner (System.in);
+
+        bici.velocidadActual = 5;
+
+        System.out.println("La velodidad actual es: " + bici.velocidadActual);
+
+        System.out.println("Ingrese accion = 1)Acelerar  2)Frenar 3)Cambiar plato  4)Cambiar piñon  0)Salir");
+
+        int accion = -1;
+
+
+        while (accion != 0){
+
+            accion = sc.nextInt();
+
+            if (accion == 1){
+
+                bici.acelerar();
+
+                System.out.println("Velocidad actual luego de acelerar: " + bici.velocidadActual);
+
+            } else if (accion == 2){
+
+                bici.frenar();
+
+                System.out.println("Velocidad actual luego de frenar: " + bici.velocidadActual); 
+
+            } else if (accion == 3){
+
+                System.out.println("Ingrese el nuevo plato");
+
+                int plato = sc.nextInt();
+
+                bici.cambiarPlato(plato);
+
+                System.out.println("Plato actual: " + bici.platoActual);
+
+            } else if (accion == 4){
+
+                System.out.println("Ingrese el nuevo piñon");
+
+                int pinon = sc.nextInt();
+
+                bici.cambiarPinon(pinon);
+
+                System.out.println("Piñon actual: " + bici.pinonActual);
+
+            }
+
+
+        }
+
+ 
+;
+
+ 
+    }
+
+}
+
+ 
+ 
+---------
+LA OTRA CLASE DONDE CREAMOS LOS METODOS:
+ 
+package demo_bicicleta;
+ 
+public class bicicleta {
+
+
+    public int velocidadActual;
+
+    public int platoActual;
+
+    public int pinonActual;
+
+    public void acelerar(){
+
+        this.velocidadActual = this.velocidadActual * 2;
+
+    }
+
+    public void frenar(){
+
+        this.velocidadActual = this.velocidadActual / 2;        
+
+    }    
+
+    public void cambiarPlato(int nuevoPlato){
+
+        this.platoActual = nuevoPlato;
+
+    }    
+
+    public void cambiarPinon(int nuevoPinon){
+
+        this.pinonActual = nuevoPinon;
+
+    }
+
+}
+
+ 
+---------------------
+ 
+Para generar un constructor agregar la segunda clase:
+ 
+    public bicicleta(int velocidad, int plato, int pinon){
+
+        this.velocidadActual = velocidad;
+
+        this.platoActual = plato;
+
+        this.pinonActual = pinon;
+
+    }
+
+ 
+luego en el MAIN,tengo que generar el constructor y agregarle en el parentesis los parametros que quiera de velocidad,etc (10, 10, 10)
