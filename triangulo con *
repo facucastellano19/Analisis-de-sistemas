@@ -1,0 +1,47 @@
+
+Ejercicio generar triangulo con * 
+
+
+package e906;
+ 
+import java.util.Scanner;
+ 
+ 
+public class E906 {
+ 
+ 
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner (System.in);
+
+        int num = sc.nextInt();
+
+        // Primera version
+
+        for (int i = 1; i <= num; i++) {
+
+            for (int j = 1; j <= i; j++) {
+
+                System.out.print("*");   
+
+            }
+
+            System.out.println("");
+
+        }
+
+
+        // Segunda version
+
+        System.out.println("");
+
+        for (int c = 1; c <= num; c++) {
+
+            System.out.println("*".repeat(c));
+
+        }
+
+    }
+
+
+}
