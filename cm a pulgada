@@ -1,0 +1,47 @@
+PRACTICA CON METODO (CM A PULGADAS)
+EN EL MAIN:
+ 
+package demo2;
+ 
+import java.util.Scanner;
+ 
+public class Demo2 {
+ 
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner (System.in);
+
+        conversor cv = new conversor ();
+
+        System.out.println("Ingrese una medida expresada en cm");   
+
+        double valor = sc.nextDouble();
+
+        double pulgadas = cv.cmapulgada(valor);
+
+        System.out.println(pulgadas);
+ 
+-----------------------------------------------------------------
+
+        EN LA OTRA CLASE:
+ 
+package demo2;
+ 
+ 
+public class conversor {
+
+    public double cmapulgada (double centimetro){
+
+        double resultado;
+
+        double factor = 2.54;
+
+        resultado = centimetro / factor;
+
+        return resultado;
+
+    }
+
+}
+
+ 
