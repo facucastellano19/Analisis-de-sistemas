@@ -1,0 +1,34 @@
+E503: INGRESAR UN NUMERO EN STRING Y DECIR SI ES NUMERICO O NO
+
+
+package e503;
+ 
+import java.util.Scanner;
+ 
+public class E503 {
+ 
+    public static void main(String[] args) {
+
+       Scanner sc = new Scanner (System.in);
+
+       String cifra = sc.nextLine();
+
+        System.out.println("Ingresa un numero");
+ 
+        if (cifra.startsWith("0") || cifra.startsWith("1") || cifra.startsWith("2") || 
+
+            cifra.startsWith("3") || cifra.startsWith("4") || cifra.startsWith("5") ||
+
+            cifra.startsWith("6") || cifra.startsWith("7") || cifra.startsWith("8") || cifra.startsWith("9")){
+
+            System.out.println("Es numerico"); 
+
+        } else {
+
+            System.out.println("No es numerico");
+
+        }
+
+    }
+
+}
