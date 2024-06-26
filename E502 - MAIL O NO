@@ -1,0 +1,31 @@
+
+E504: SI TIENE @ DICE QUE ES UN MAIL
+
+
+package e504;
+ 
+import java.util.Scanner;
+ 
+public class E504 {
+ 
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println("Ingrese su mail");
+
+        String mail = sc.nextLine();
+
+        if(mail.contains("@")){
+
+            System.out.println("Es un email");
+
+        } else {
+
+            System.out.println("No es un email");
+
+        }
+
+    }
+
+}
