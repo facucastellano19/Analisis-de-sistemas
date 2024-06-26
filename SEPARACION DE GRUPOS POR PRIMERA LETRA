@@ -1,0 +1,33 @@
+
+EJERCICIO SUBSTRING Y COMPARE TO: SEPARACION DE GRUPOS POR PRIMERA LETRA
+Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Ingrese su sexo (M o F):");
+
+        String sexo = entrada.nextLine();
+
+
+        System.out.println("Ingrese su nombre:");
+
+        String nombre = entrada.nextLine();
+
+        //Guardamos la primera letra del nombre en una variable
+
+        String letra=nombre.substring(0, 1); 
+
+        letra=letra.toUpperCase(); 
+
+        //el compareToIgnoreCase parte desde una letra para mas arriba o mas abajo con > o <
+
+
+        if (sexo.equalsIgnoreCase("M") && (letra.compareToIgnoreCase("N")>=0) || sexo.equalsIgnoreCase("F") && (letra.compareToIgnoreCase("M")<=0)) {
+
+            System.out.println("Pertenece al Grupo A");
+
+        } else {
+
+            System.out.println("Pertenece al Grupo B");
+
+        }
+
+tiene menú contextualPárrafo
