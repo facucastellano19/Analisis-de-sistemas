@@ -1,0 +1,72 @@
+
+PRACTICA CON METODOS 2: EJERCICIO ESTACIONAMIENTO
+EN EL MAIN: 
+ 
+package demo3;
+ 
+import java.util.Scanner;
+ 
+public class Demo3 {
+ 
+    
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner (System.in);
+
+        estacionamiento em = new estacionamiento();
+
+        System.out.println("Ingrese horas");
+
+        int cantidad = sc.nextInt();
+
+        double importe = em.calculaTarifa(cantidad);
+
+        System.out.println("Usted debe pagar: " + importe);
+
+    }
+
+}
+
+
+--------------------------------
+ 
+En la otra clase:
+ 
+ 
+package demo3;
+ 
+ 
+public class estacionamiento {
+ 
+    // lo que esta entre parentesis es lo mismo que la variable cantidad del main, se copia el valor solamente pero no es la misma variable
+ 
+    public double calculaTarifa (int horas){   
+
+        double resultado = 0;
+
+        if (horas==0) {
+
+            System.out.println(resultado);
+
+        }
+
+        double hora1 = 2100;
+
+        double horax = 1500;
+
+       // resultado = hora1 + (horax * (horas-1));
+
+        double primerhora = hora1;
+
+        double demasHoras = horax * (horas-1);
+
+        resultado = primerhora + demasHoras;        
+
+        return resultado;
+
+    } 
+
+}
+
+ 
