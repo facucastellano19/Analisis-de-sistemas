@@ -1,0 +1,58 @@
+
+PRACTICA PARCIAL 1
+
+
+package e002;
+ 
+import java.util.Scanner;
+ 
+ 
+public class E002 {
+ 
+    public static void main(String[] args) {
+ 
+        ejercicio ej = new ejercicio();
+
+        ej.solucion();
+
+    }
+
+}
+
+--------
+ 
+package e002;
+ 
+import java.util.Scanner;
+ 
+public class ejercicio {
+
+    public void solucion(){
+
+        // Ingresa un numero, caclular IVA 21%. Mostrar precio con y sin IVA    
+
+
+        // Entrada
+
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println("Ingrese un precio");
+
+        double precio = sc.nextInt();
+
+
+        // Proceso
+
+        double precio_con_iva = precio * 1.21;
+
+
+        // Salida
+
+        System.out.println("El precio con IVA es: " + precio_con_iva);
+
+        System.out.println("El precio sin IVA es: " + precio);           
+
+    }
+
+
+}
