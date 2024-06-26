@@ -1,0 +1,130 @@
+
+E603: CREACION DE UN RECIBO Y REEMPLAZAR DATOS
+ 
+MAIN:
+ 
+package e603;
+ 
+import java.util.Scanner;
+ 
+public class E603 {
+ 
+ 
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println("Ingrese Nombre, Importe, concepto y fecha: ");
+
+        String nombre = sc.nextLine();
+
+        String importe = sc.nextLine();        
+
+        String concepto = sc.nextLine();       
+
+        String fecha =  sc.nextLine(); 
+
+        recibo rc = new recibo (nombre, importe, concepto, fecha);
+
+        System.out.println(rc.imprime());
+ 
+        
+
+    }
+
+}
+ 
+CLASE LOGICA:
+ 
+package e603;
+ 
+ 
+public class recibo {
+ 
+    String nombre;
+
+    String importe;        
+
+    String concepto;       
+
+    String fecha;       
+ 
+    public recibo(String nombre, String importe, String concepto, String fecha) {
+
+        this.nombre = nombre;
+
+        this.importe = importe;
+
+        this.concepto = concepto;
+
+        this.fecha = fecha;
+
+    }
+
+
+    public String imprime(){
+
+        String salida = "";
+ 
+        StringBuilder plantilla = new StringBuilder();
+
+        plantilla.append("Recibo - Fecha <fecha>");
+
+        plantilla.append("\n"); // ( \n ) se usa para un salto de linea
+
+        plantilla.append("Recibi del Sr/a <nombre> la cantidad de pesos <importe> por el concepto de <concepto>");
+
+        plantilla.append("\n"); 
+
+        plantilla.append("\n");
+
+        plantilla.append("\n");
+
+        plantilla.append("------------                                                  ------------");
+
+        plantilla.append("\n");
+
+        plantilla.append("Firma emisor                                                 Firma receptor");
+
+        //indexOf me indica la primera posicion de la palabra ingresada, en este caso <fecha>
+
+        int p1 = plantilla.indexOf("<fecha>");
+
+        //Sabiendo la posicion, hacemos de la primera posicion, hasta la primera posicion + 7 (cantidad de caracteres de fecha)
+
+        //Y remplazamos por la variable (fecha) en este caso
+
+        plantilla.replace(p1, p1 + 7, fecha);
+
+
+        //Lo mismo aca
+
+        int p2 = plantilla.indexOf("<nombre>");
+
+        plantilla.replace(p2, p2 + 8, nombre);                
+
+        //Lo mismo aca
+
+        int p3 = plantilla.indexOf("<importe>");
+
+        plantilla.replace(p3, p3 + 9, importe);        
+
+        //Lo mismo aca
+
+        int p4 = plantilla.indexOf("<concepto>");
+
+        plantilla.replace(p4, p4 + 10, concepto);              
+
+        System.out.println("");
+
+        System.out.println(plantilla.toString());
+
+        salida = plantilla.toString();
+
+        return salida;
+
+
+        }
+
+
+}
