@@ -1,0 +1,136 @@
+
+E701: RECIBIR AUTOR Y TITULO
+MAIN: 
+ 
+package e701;
+ 
+public class E701 {
+ 
+    public static void main(String[] args) {
+
+        // Primera forma : Objeto sin valores y los voy agregando
+
+        cancion cn = new cancion();      
+
+        cn.ponAutor("Rodrigo");
+
+        cn.ponTitulo("Soy Cordobes");    
+
+        System.out.println(cn.toString());
+
+        //Segunda forma con constructor : Ya tenemos los valores
+
+        cancion c2 = new cancion("Entregaste", "Luis Miguel");  
+
+        System.out.println(c2.toString());
+
+
+    }
+
+}
+
+CLASE LOGICA
+ 
+package e701;
+ 
+public class cancion {
+
+    String titulo = "";
+
+    String autor = "";
+
+    //Creamos constructor vacio (sin parametros) para usar con la primera cancion 
+
+    public cancion(){
+
+    }   
+
+    //Creamos constructor con los parametros para la segunda cancion    
+
+    public cancion(String titulo, String autor) {
+
+        this.titulo = titulo;
+
+        this.autor = autor;
+
+    }
+ 
+    public String dameTitulo(){
+
+        return this.titulo;
+
+    }
+
+    public String dameAutor(){   
+
+        return this.autor;
+
+    }
+
+    public void ponTitulo(String nuevoTitulo){
+
+        this.titulo = nuevoTitulo;   
+
+    }
+ 
+    public void ponAutor(String nuevoAutor){
+
+       this.autor = nuevoAutor;
+
+    }
+ 
+    
+
+    // Generamos el toString automatico para recibir el resultado en el main, tocando Source > Insert Code > toString
+
+    @Override
+
+    public String toString() {
+
+        return "cancion {" + "titulo: " + this.titulo + ", autor: " + this.autor + '}';
+
+    }
+
+
+}
+
+ 
+    
+
+
+    static Scanner sc = new Scanner (System.in);
+
+    public String dameTitulo(){
+
+        return this.titulo;
+
+    }
+
+    public String dameAutor(){   
+
+        return this.autor;
+
+    }
+
+    public void ponTitulo(String nuevoTitulo){
+
+        this.titulo = nuevoTitulo;   
+
+    }
+ 
+    public void ponAutor(String nuevoAutor){
+
+       this.autor = nuevoAutor;
+
+    }
+ 
+    @Override
+
+    public String toString() {
+
+        return "cancion {" + "titulo: " + this.titulo + ", autor: " + this.autor + '}';
+
+    }
+
+
+}
