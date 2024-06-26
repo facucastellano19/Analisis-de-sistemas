@@ -1,0 +1,77 @@
+
+E919: CALCULAR COSTO DE LLAMADA POR TRAMO
+MAIN
+
+
+package e919;
+ 
+import java.util.Scanner;
+ 
+ 
+public class E919 {
+ 
+ 
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println("Ingrese minutos de llamada");
+
+        int minutos = sc.nextInt();
+
+        llamada llam = new llamada ();
+
+        double costo = llam.calculaCosta(minutos);
+
+        System.out.println("El costo de la llamada es: " + costo + " Euros");
+
+    }
+
+}
+
+ 
+CLASE LOGICA
+
+
+package e919;
+ 
+ 
+public class llamada {
+
+
+    public double calculaCosta (int minutos){
+
+        double resultado = 0 ;
+
+        double costoFull = 1 + 0.8 + 0.7 + 0.5;
+
+        double costoTramo1 = 1;
+
+        double costoTramo2 = 1 + 0.8;
+
+        double costoTramo3 = 1 + 0.8 + 0.7;
+
+
+        if (minutos <= 5) {
+
+            resultado = costoTramo1;
+
+        } else if (minutos > 5 && minutos <= 8){
+
+            resultado = costoTramo2;
+
+        } else if (minutos > 8 && minutos <= 10){
+
+            resultado = costoTramo3;
+
+        } else if (minutos > 10){
+
+            resultado = costoFull;
+
+        }        
+
+        return resultado;
+
+    }
+
+}
