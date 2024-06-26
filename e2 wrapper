@@ -1,0 +1,37 @@
+
+E2 Wrapper
+
+
+package e2_wrapper;
+ 
+import java.util.Scanner;
+ 
+public class E2_wrapper {
+ 
+    
+
+    //APP que calcule el area de un circulo, se pide el radio, usando la cons P1 y el metodo pow de Math
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println("Ingresa radio del circulo: ");  
+
+        Double radio = sc.nextDouble();
+
+        //Version 1) 
+
+        //Double r2 = radio * radio;
+
+        //Version 2)
+
+        Double r2 = Math.pow(radio, 2);  //Math.pow eleva al cuadrado en este caso
+
+        Double sup = Math.PI * r2; //Math.PI usamos la libreria Math para multiplicar * PI
+
+        System.out.println("Superficie: " + sup);
+
+    }
+
+}
