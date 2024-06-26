@@ -1,0 +1,104 @@
+
+E912:  Calcular volumen de cilindro
+package e912;
+ 
+import java.util.Scanner;
+ 
+ 
+public class E912 {
+ 
+ 
+    public static void main(String[] args) {
+
+        cilindro cil = new cilindro();
+
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println("Ingrese el radio de la base del cilindro");
+
+        double base1 = sc.nextDouble();
+
+        System.out.println("Ingrese altura del cilindro");
+
+        double altura = sc.nextDouble();        
+
+        double sup = cil.area_base(base1);
+
+        double vol = cil.volumen(base1, altura);
+
+        System.out.println("La superficie: " + sup);
+
+        System.out.println("El volumen: " + vol);
+
+    }
+
+}
+
+ 
+CLASE LOGICA:
+
+
+package e912;
+ 
+ 
+public class cilindro {
+
+    public double area_base (double radio){
+
+        double resultado = 0;
+
+        // Calcular area : PI * radio2
+
+        resultado = Math.PI * radio * radio;
+
+        return resultado;
+
+    }
+
+
+    public double volumen (double radio, double altura){
+
+        double resultado = 0;
+
+        double base = this.area_base(radio);
+
+        resultado = base * altura;
+
+        return resultado;
+
+    }
+
+}
+
+
+package e912;
+ 
+ 
+public class cilindro {
+
+    public double area_base (double radio){
+
+        double resultado = 0;
+
+        // Calcular area : PI * radio2
+
+        resultado = Math.PI * radio * radio;
+
+        return resultado;
+
+    }
+
+
+    public double volumen (double radio, double altura){
+
+        double resultado = 0;
+
+        double base = this.area_base(radio);
+
+        resultado = base * altura;
+
+        return resultado;
+
+    }
+
+}
