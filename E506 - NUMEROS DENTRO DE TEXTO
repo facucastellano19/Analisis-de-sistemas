@@ -1,0 +1,42 @@
+
+E506 : PIDE TEXTO, CUENTA CUANTOS NUMEROS HAY DENTRO DEL TEXTO Y LO MUESTRA
+package e506;
+ 
+import java.util.Scanner;
+ 
+public class E506 {
+ 
+    public static void main(String[] args) {
+
+    Scanner sc = new Scanner (System.in);
+
+    System.out.println("Ingresa un frase");
+
+    String frase = sc.nextLine();
+
+    int largo = frase.length();
+
+    int contador = 0;
+
+    String digitos = "0123456789";
+
+    for (int i = 0; i < largo; i++) {
+
+        char letra = frase.charAt(i);     
+
+        String sletra = Character.toString(letra);
+
+        if (digitos.contains(sletra)) {
+
+            contador++;     
+
+        }   
+
+    }
+
+    System.out.println("Cantidad de digitos: " + contador);
+
+
+    }
+
+}
