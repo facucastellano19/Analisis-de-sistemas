@@ -1,0 +1,40 @@
+
+E901: Ingresar contraseña y mostrar si coincide
+
+
+package e901;
+ 
+import java.util.Scanner;
+ 
+ 
+public class E901 {
+ 
+ 
+    public static void main(String[] args) {    
+
+        Scanner sc = new Scanner (System.in);
+
+        String contrasena = "hola";
+
+        System.out.println("Ingrese la contraseña");         
+
+        String contrasena2 = sc.nextLine();   
+
+// OPCION 1        
+        if (contrasena.compareToIgnoreCase(contrasena2)== 0) // == 0 Significa que tienen mismo valor, valor mayor a 0 es que son distintas
+ 
+// OPCION 2
+
+        if (contrasena.equalsIgnoreCase(contrasena2)) {
+
+            System.out.println("La contraseña coincide");    
+
+        } else {
+
+            System.out.println("La contraseña no coindice");
+
+        }
+
+    }
+
+}
