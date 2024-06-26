@@ -1,0 +1,59 @@
+package castellanofacundo;
+ 
+import java.util.Scanner;
+ 
+ 
+public class CastellanoFacundo {
+ 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        String seguir;
+        String nombre;
+        do {
+            System.out.println("Ingrese su nombre");
+            nombre = sc.next();
+ 
+            System.out.println("Ingrese la cantidad de ventas realizadas");
+            int cantidadVentas = sc.nextInt();
+            double valor_ventas_totales = 0;
+            double mayorValor = 0;
+ 
+            if (cantidadVentas > 0) { 
+            System.out.println("");
+            System.out.println("Nombre: " + nombre);
+            System.out.println("Cantidad de ventas: " + cantidadVentas);
+ 
+            for (int i = 1; i <= cantidadVentas; i++) {
+ 
+                System.out.println("--------------------------------");
+                System.out.println("Ingrese el valor de la venta " + i);
+                double valorVenta = sc.nextInt();
+                System.out.println("--------------------------------");
+                System.out.println("Importe venta " + i + " : " + valorVenta);
+ 
+                valor_ventas_totales = valor_ventas_totales + valorVenta;
+ 
+ 
+                if (valorVenta > mayorValor) {  
+                    mayorValor = valorVenta;
+                }       
+ 
+            }       
+            if (valor_ventas_totales > 500) {
+                    double comision = mayorValor * 0.20; 
+                    System.out.println("");
+                    System.out.println("El vendedor " + nombre + " debe cobrar una comision de u$s" + comision);
+            } else {
+                    System.out.println("");
+                    System.out.println("El vendedor " + nombre + " no cumple las condiciones para cobrar la comision");
+                   } 
+
+            } else {
+                System.out.println("Ingrese un numero mayor a 0");
+            }
+            System.out.println("Queres realizar otra operacion? (Si / No)");
+            seguir = sc.next(); 
+        }while(seguir.equalsIgnoreCase("si"));
+
+    }
+}
