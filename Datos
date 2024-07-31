@@ -1,0 +1,402 @@
+SENTENCIAS CONDICIONALES
+
+if simple: Evalúa una condición y ejecuta un bloque de acciones si la condición es verdadera.
+
+if doble: Evalúa una condición y ejecuta un bloque de acciones sea V o F.
+
+Switch: Compara una variable contra varios valores permitiendo ejecutar un conjunto de operaciones para cada valor posible
+
+Operadores lógicos booleanos:
+
+| (OR bit a bit): OR entre bits correspondientes.
+& (AND bit a bit): AND entre bits correspondientes.
+^ (XOR bit a bit): XOR entre bits correspondientes.
+! (NOT lógico): Invierte valor booleano.
+|| (OR lógico): Verdadero si cualquier expresión verdadera.
+&& (AND lógico): Verdadero si ambas expresiones verdaderas.
+== (igualdad): Comprueba si operandos iguales.
+!= (desigualdad): Comprueba si operandos diferentes.
+
+SENTENCIAS INCONDICIONALES
+
+Goto: Se usa para saltar a otro punto del programa en forma incondicional
+Return: Se usa para volver desde una función/procedimiento/subrutina
+Break: Se usa para salir en forma incondicional de un ciclo for, while, do while
+
+—------------------------------------------—------------------------------------------—------------------------------
+
+Elementos de la plataforma Java
+
+JVM: Java Virtual Machine
+JRE: Java Runtime Environment
+JDK: Java Development Kit
+
+
+Recolección de basura de Java
+
+Es un proceso de recuperación automática de la memoria no utilizada en ejecución. Se ejecuta automáticamente con un metodo llamado finalize()
+
+
+
+—------------------------------------------—------------------------------------------—------------------------------
+
+
+Estructuras repetitivas: Características
+
+Permite ejecutar de forma repetida una instrucción o bloque de instrucciones
+Se repiten mientras se cumpla una condición (condición de salida del bucle)
+
+Ciclos: 
+
+WHILE: 
+Se repite el ciclo mientras la condición sea cierta
+Se comprueba la condición al principio del bucle, es tipo boolean.
+
+DO WHILE: 
+Se repite el ciclo mientras la condición sea cierta, pero se comprueba al final. Osea que se ejecuta al menos una vez.
+
+FOR:
+Hace que una instrucción o bloque de instrucciones se repitan un número determinado de veces mientras se cumpla la condición. Se usa variable auxiliar a modo de contador, cuando supera el máximo de vueltas, se sale del ciclo,
+
+
+—------------------------------------------—------------------------------------------—------------------------------
+
+Clases y Objetos
+
+CLASES: 
+Describe un grupo de objetos que comparten atributos y métodos comunes.
+
+UNA CLASE SE COMPONE DE:
+Información: campos (atributos, propiedades)
+Comportamiento: métodos (operaciones, funciones)
+
+CAMPOS:
+
+Los objetos almacenan información en sus campos
+
+Tipos de campos:
+
+Campos de instancia: Hay una copia de este campo por cada objeto de la clase y es accesible a través del objeto al que pertenece.
+
+Campos static (de clase): Hay una única copia de este campo en el sistema y es accesible a través de la clase.
+
+
+
+MÉTODOS:
+
+Son Instrucciones que operan sobre los datos de un objeto para obtener resultados
+Tienen 0 o más parámetros
+Pueden retornar un valor o no (void)
+Pueden ser de instancia o static: 
+
+De instancia: se invoca sobre un objeto de la clase (acceso con la palabra this). 
+Static: no opera sobre un objeto de la clase y la palabra “this” no es válida.
+
+“this”: Hace referencia al objeto sobre el cual se invoca un método de instancia
+
+Sintaxis: [Static] <tipo retorno><nombre>(<>parametro1, …) {
+return <valor del retorno>
+}
+
+Acceso a los métodos y campos de instancia: Se utiliza la sintaxis objeto
+
+circulo c1 = new circulo();
+c1.radio = 5
+c1.color = “rojo”
+etc
+
+Acceso a métodos y campos static: Se utiliza la sintaxis “clase”
+
+circulo.numeroCirculos++;
+int n = Circulo.getNumeroCirculos();
+System.out.println(Circulo.PI)
+
+PROPIEDADES:
+
+En JAVA, se definen por la existencia de métodos getter y setter
+
+CONSTRUCTORES:
+
+Constructor: Es un método especial invocado para instanciar e inicializar un objeto de la clase
+
+Invocado con la sentencia “new”
+Es el primero en ejecutarse al crearse el objeto
+Tiene el mismo nombre que la clase
+Puede tener 0 o más parámetros
+No tiene ningún tipo de retorno
+
+
+Si la clase NO TIENE constructor, el sistema crea uno por default sin parámetros
+Si la clase TIENE constructor, debe usarse alguno de los constructores definidos al 
+instanciar la clase.
+
+Constructores con y sin parámetros
+
+// Atributos
+private String dni
+private String nombre
+
+//SIN parámetros:
+Persona(){
+this.dni=””
+this.nombre=””
+}
+
+// CON parámetros
+public Persona(String dni, String nombre){
+this.dni= dni
+this.nombre= nombre
+}
+
+Cuando creamos un objeto de la clase persona hay que pasarle los valores, lo que pase se asignará. En este caso el dni que se ponga se asignará a DNI y así con todo.
+
+
+Constructor copia: Es un tipo de constructor que recibe como parámetro un objeto de la misma clase
+
+// Constructor copia
+public Persona(Persona objPersona){
+this.dni= objPersona.dni
+this.nombre= objPersona.nombre
+}
+
+
+—------------------------------------------—------------------------------------------—------------------------------
+
+
+ACCESO A LOS ATRIBUTOS Y SCOPE:
+
+Es necesario poder manejar los valores o información que llevan
+
+Métodos modificadores: Dan lugar a un cambio en el valor de uno o varios atributos del objeto (setter)
+
+Métodos consultores/observadores: Devuelven información sobre el contenido de los atributos del objeto (getter)
+
+Método para consultar sus atributos: get (getMatricula)
+Método para modificar sus valores: set (setMatricula)
+
+Ejemplo getter y setters:
+
+Perro miPerro = new Perro();
+miPerro.setAge(2)
+SOUT(miPerro.getAge)
+
+
+El alcance (scope) de la variable se refiere a la región donde se crean y se accede a ellas en un programa 
+
+Variables de instancia
+
+no estáticas
+Pertenecen y estan Definidas en una clase fuera de cualquier método constructor y bloque
+Cada objeto instanciado tiene su propia copia
+
+ES DECIR: Cuando creas un nuevo objeto de la clase, creas una instancia. (ej cuando creas el Scanner)
+
+Variable de clase:
+Se declara dentro de una clase, fuera de todos los bloques y está marcada como Static.
+
+Variables locales:
+Todas las que no son variables de instancia y clase se tratan como variables locales. Su alcance está dentro del bloque
+
+
+—------------------------------------------—------------------------------------------—------------------------------
+
+INTRODUCCIÓN PARADIGMA DE LA PROGRAMACIÓN ORIENTADA A OBJETOS (POO):
+
+El concepto paradigma se utiliza como sinónimo de “ejemplo” o para hacer referencia en caso de algo que se toma como “modelo”
+
+Es una forma diferente de programar, relativamente nueva
+
+Está basada en simular la realidad, más que en repetir instrucciones
+
+
+
+
+
+Estructura monolítica
+Datos y funciones separados
+Datos visibles en toda la aplicación
+Modificar datos puede requerir cambios en todas las funciones relacionadas
+
+
+En la POO es diferente:
+
+Mayor nivel de abstracción que la programación estructurada
+Organiza su programa en objetos (representaciones del mundo real)
+Los datos y las funciones que los manipulan son parte de  cada objeto.
+
+
+¿QUÉ ES UN OBJETO EN PROGRAMACIÓN ORIENTADA A OBJETOS?
+
+Un objeto es un conjunto de datos con las operaciones definidas. Tienen un estado y comportamiento.
+
+Abstracción funcional: Hay cosas que sabemos pero no como lo hacen
+Abstracción de datos: Los atributos
+
+Características de un objeto:
+
+Identidad: Se diferencia de otro
+Estado: Parámetros/atributos que lo describen
+Comportamiento: Sus acciones
+
+Propiedades y métodos de los objetos:
+
+Campos, atributos, propiedades: Parte del objeto que almacena los datos. Se les denomina Variables Miembro, pueden ser de cualquier tipo primitivo.
+
+Métodos o Funciones Miembro: Parte del objeto que hace las operaciones sobre los atributos definidos.
+
+
+Interacción entre objetos:
+
+Un mensaje: Es la acción que realiza un objeto.
+El proceso de interacción entre objetos: Se “envía un mensaje” a un objeto(petición) , y el objeto determina “qué hacer con el mensaje” (ejecuta el codigo del metodo)
+
+
+Cuando se ejecuta un programa se producen las siguientes acciones:
+
+Creación de los objetos a medida que se necesitan
+
+Comunicación entre los objetos mediante el envío de mensajes unos a otros, o los usuarios a los objetos.
+
+Eliminación de los objetos cuando no son necesarios para dejar espacio libre en la memoria del computador.
+
+Elementos en lenguajes POO:
+Específico a JAVA
+Interviene en la programación la estructura de archivos y directorios
+Cada clase debe estar en su propio archivo
+Un grupo de clases forma un paquete
+Un paquete equivale a una carpeta y su ruta o path
+Cada clase pertenece a un paquete
+
+
+—------------------------------------------—------------------------------------------—------------------------------
+
+Java y la clase String:
+
+Una variable que almacena una cadena de caracteres se declara String. Se considera un tipos de datos compuestos ya que se construyen a base de datos primitivos (los caracteres)
+En JAVA los STRING SON INMUTABLES, INMODIFICABLES (directamente). La única manera es crear otro nuevo.
+
+Los caracteres de un String se enumeran basados en 0.
+
+CHAR: Es un tipo primitivo que representa caracteres individuales y se escribe con ‘ ‘ comillas simples. Se pueden concatenar con Strings.
+
+Los tipos de datos primitivos representan valores atómicos, esto es, que no se subdividen
+
+Datos primitivos en JAVA:
+Enteros: short, byte, int, long
+Reales: float, double
+Caracteres: char
+Lógicos: boolean
+
+Las variables de tipo referencia (como String) no almacenan directamente el valor que se les asigna.
+A este tipo de valor se lo conoce como objeto.
+La variable de tipo String almacena la dirección donde se encuentra el objeto
+
+Algunos Métodos de String:
+
+length: Devuelve cantidad de caracteres
+toLowerCase:Todo a minúscula
+toUpperCase: Todo a mayúscula
+charAt: Devuelve carácter ubicado en una posición
+indexOf: Encontrar la posición de una subcadena o un carácter dentro de una cadena. Devuelve la posición en que se encuentra
+substring: Para obtener una parte del texto
+concat: concatenar
+
+
+Operador más importante para Strings:
+
+Concatenación: con el “+”
+
+Algunos Metodos de comparacion:
+
+equals: Evalúa mismo contenido en dos String
+compareTo: Evalúa a true si el contenido es igual
+compareToIgnoreCase: lo mismo pero ignora mayus y minus.
+startsWith: empieza con
+endWith: termina con
+contains:si la cadena dada se encuentra dentro de la otra
+
+
+Métodos toString()
+La idea es que represente en forma textual el contenido del objeto, listando el contenido de sus atributos.
+
+
+
+STRINGBUFFER y STRINGBUILDER (Es lo mismo prácticamente)
+
+Métodos 
+
+1) append (String x): Se utiliza para agregar el String nuevo al String existente. Esta sobrecargado como append(int), (boolean), (char), e
+
+
+            StringBuilder sb = new StringBuilder(“Hello “)
+o
+StringBuffer = new StringBuffer (“Hello “)
+sb.append(“Java”);
+System.out.println(sb) = Imprime: Hello Java
+
+2) insert(int offSet, String x): Se utiliza para insertar el String nuevo al string existente en la posición especificada. Esta sobrecargado como insert(int,char), (int, boolean), (int, int), etc.
+            StringBuilder sb = new StringBuilder(“Hello “) 
+o
+StringBuffer = new StringBuffer (“Hello “);
+sb.insert(1, “Java”);
+System.out.println(sb) = Imprime: HJavaello
+
+3) replace(int startIndex, int endIndex, String x): Se utiliza para reemplazar la cadena de startIndex y endIndex especificados
+
+            StringBuilder sb = new StringBuilder(“Hello “)
+o
+StringBuffer = new StringBuffer (“Hello “);
+sb.replace(1, 3, “Java”); // Remplaza del caracter 1 al 2 con Java
+System.out.println(sb) = Imprime: HJavalo
+
+
+DIFERENCIAS ENTRE STRINGBUILDER Y STRINGBUFFER:
+
+Son clases para manipular texto
+StringBuffer: Está sincronizado, seguro para subprocesos. Es menos eficiente. Se introdujo en JAVA 1.0
+
+StringBuilder: No está sincronizado, no es seguro para subprocesos. Es más eficiente. Se introdujo en JAVA 1.5
+
+
+
+—------------------------------------------—------------------------------------------—------------------------------
+
+
+LOS MÉTODOS en una clase
+
+Funciones: 
+Conjunto de líneas de código en un bloque
+Reciben parámetros para hacer operaciones y retornar un valor
+En java usan el modificador static
+
+Métodos
+Es una función que pertenece SIEMPRE a un objeto. Puede recibir valores, hacer operaciones y retornar valores. 
+
+Procedimientos
+Conjunto de instrucciones que se ejecutan sin retornar ningún valor
+Pueden recibir o no valores o argumentos.
+Retorno void
+
+Pueden tener 0 o más parámetros, se separan con coma, tienen tipo y nombre, si recibe parámetro nos obliga a hacer uso de este.
+
+Después de la ejecución del return, no se ejecuta ninguna instrucción más.
+
+El tipo del valor que retorna tiene que ser el mismo que el declarado, menos en los void
+
+—------------------------------------------—------------------------------------------—------------------------------
+
+HERENCIA
+
+Es un mecanismo que permite la definición de una clase a partir de otra ya existente. La herencia permite compartir métodos y datos entre clases, subclase y objetos.
+
+La herencia saca el “factor común” de los métodos y datos para no escribir código de más.
+La clase principal de llama SuperClase o Clase Padre
+Lo que no es común, es decir el código es específico va a las clases Hijas. Hereda todo menos lo privado
+
+PALABRAS USADAS: extends, protected, super
+
+extends: Indica a la clase hija cual va a ser su clase padre
+
+protected: tipo de visibilidad de los atributos y métodos de la clase padre
+
+super: llama al constructor de la clase padre
